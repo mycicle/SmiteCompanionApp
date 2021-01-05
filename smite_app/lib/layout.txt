@@ -1,0 +1,73 @@
+Layout of the App
+
+
+
+
+HOMEPAGE
+APPBAR
+back    SBA     MENU
+                -> Gods    Categories  Items   MyBuilds     NewBuild
+BODY
+Gods
+Categories
+Items
+MyBuilds
+NewBuild
+
+
+=================================
+
+GODS
+APPBAR
+""
+
+BODY
+Scroll list of gods
+Icon    Name            >[arrow](builds for that god)
+
+
+==================================
+
+GOD BUILD
+APPBAR
+""
+
+BODY
+Information Button    >[arror](information page about that god)
+MyBuilds for that god in a scroll list
+divbar
+Recommended builds for that god
+
+FOOTER
+new build for god GODNAME     >(arrow)[create build page]
+
+
+==================================
+
+NEW BUILD PAGE
+APPBAR
+""
+
+BODY
+ITEM MENU
+
+FOOTER
+Horizontal list of chosen items
+
+====================================
+
+ITEM MENU
+A scrollable grid of items where if you tap on the item will bring you to an info page for that item,
+in this case the info page will maintain the previous build footer , otherwise its super annoying
+
+
+=====================================
+
+
+INFO PAGE
+APPBAR
+""
+
+BODY
+Upper left has an image of what the info is for, followed by the name of the object
+Below that is a description of everything about the item or god in question
