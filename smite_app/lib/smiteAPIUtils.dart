@@ -1,12 +1,9 @@
-import "package:flutter/material.dart";
-import 'package:crypto/crypto.dart';
 import "dart:convert";
 import "package:http/http.dart" as http;
 import "package:smite_app/Album.dart";
-
-String generateMd5(String input) {
-  return md5.convert(utf8.encode(input)).toString();
-}
+import "package:smite_app/SmiteResponses.dart";
+import "package:smite_app/AuthInfo.dart";
+import 'package:smite_app/utils.dart';
 
 Future<Album> fetchAlbum() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
@@ -21,6 +18,27 @@ Future<Album> fetchAlbum() async {
     throw Exception('Failed to load album');
   }
 }
+
+Future<SessionResponse> fetchSessionResponse(AuthInfo info) async {
+  final response = await http.get(SessionResponse.buildLink(info));
+
+  if (response.statusCode == 200) {
+    return SessionResponse.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception("could not load the session response");
+  }
+}
+
+Future<GodsResponse> fetchGodsResponse(AuthInfo info) async {
+  final response = await http.get(GodsResponse.buildLink(info));
+
+  if (response.statusCode == 200) {
+    return GodsResponse.fromJson(jsonDecode(response.body));
+  } else {
+    throw Exception("could not load the session response");
+  }
+}
+
 
 // Future<http.Response> fetchAlbum() {
 //   return http.get('https://jsonplaceholder.typicode.com/albums/1');
