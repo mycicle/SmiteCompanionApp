@@ -6,25 +6,29 @@ class GodsResponse {
 
   GodsResponse({this.body});
 
-  factory GodsResponse.fromJson(Map<String, dynamic> json) {
+  factory GodsResponse.fromJson(List<dynamic> json) {
     print(json);
     return GodsResponse(
-      body: json['Artemis'],
+      body: json[0],
     );
   }
 
-  static String buildLink(AuthInfo info) {
+  static String buildLink(AuthInfo info, String id) {
+    print("BUILDING GODS LINK");
     final String base = "http://api.smitegame.com/smiteapi.svc/getgodsjson";
     final String tmstp = datetimeNow();
     final String signature = generateMd5(info.devID + "getgods" + info.authKey + tmstp);
-    return base + '/' + info.devID + '/' + signature + '/' + tmstp;
+    final String languageCode = "1";
+    print(base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode);
+    return base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode;
   }
 }
 
+
 class SessionResponse {
-  final String retMsg;
   final String sessionID;
   final String timestamp;
+  final String retMsg;
 
   SessionResponse({this.retMsg, this.sessionID, this.timestamp});
 
@@ -41,7 +45,12 @@ class SessionResponse {
     print("BUILDING LINK");
     final String base = "http://api.smitegame.com/smiteapi.svc/createsessionJson";
     final String tmstp = datetimeNow();
-    final String signature = generateMd5(info.devID + "createsession" + info.authKey + tmstp);
+    final String signature = generateMd5(
+        info.devID + "createsession" + info.authKey + tmstp);
     return base + '/' + info.devID + '/' + signature + '/' + tmstp;
+  }
+
+  String getSessionId() {
+    return this.sessionID;
   }
 }

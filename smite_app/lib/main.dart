@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:smite_app/GodsPage.dart';
+import 'package:smite_app/SmiteResponses.dart';
+import 'package:smite_app/smiteAPIUtils.dart';
+import 'package:smite_app/AuthInfo.dart';
+import 'package:smite_app/globals.dart' as global;
 
-void main() => runApp(SmiteApp());
+void main() {
+  runApp(SmiteApp());
+}
 
 class SmiteApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,10 +35,6 @@ class SmiteApp extends StatelessWidget {
       }
     );
   }
-}
-
-void navToPage() {
-  Text("string");
 }
 
 class SmiteAppHomepage extends StatefulWidget {

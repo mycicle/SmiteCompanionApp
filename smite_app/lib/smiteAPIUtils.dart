@@ -3,7 +3,6 @@ import "package:http/http.dart" as http;
 import "package:smite_app/Album.dart";
 import "package:smite_app/SmiteResponses.dart";
 import "package:smite_app/AuthInfo.dart";
-import 'package:smite_app/utils.dart';
 
 Future<Album> fetchAlbum() async {
   final response = await http.get('https://jsonplaceholder.typicode.com/albums/1');
@@ -20,31 +19,28 @@ Future<Album> fetchAlbum() async {
 }
 
 Future<SessionResponse> fetchSessionResponse(AuthInfo info) async {
-  print("making request");
+  print("sent request");
   final response = await http.get(SessionResponse.buildLink(info));
 
   if (response.statusCode == 200) {
     print("response");
     return SessionResponse.fromJson(jsonDecode(response.body));
   } else {
-    print("exception");
-    throw Exception("could not load the session response");
+    throw Exception("could not load the session response \n${response.body}");
   }
 }
 
-Future<GodsResponse> fetchGodsResponse(AuthInfo info) async {
-  final response = await http.get(GodsResponse.buildLink(info));
-
+Future<GodsResponse> fetchGodsResponse(AuthInfo info, SessionResponse session) async {
+  print("sent gods request");
+  final response = await http.get(GodsResponse.buildLink(info, session.getSessionId()));
+  print(response);
   if (response.statusCode == 200) {
-    print("response");
+    print("gods response");
     return GodsResponse.fromJson(jsonDecode(response.body));
   } else {
-    print("exception");
-    throw Exception("could not load the session response");
+    throw Exception("could not load the gods response \n${response.body}");
   }
 }
-
-
 // Future<http.Response> fetchAlbum() {
 //   return http.get('https://jsonplaceholder.typicode.com/albums/1');
 // }
