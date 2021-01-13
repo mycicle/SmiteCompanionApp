@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smite_app/GodsPage.dart';
 
 void main() => runApp(SmiteApp());
 
@@ -14,7 +15,7 @@ class SmiteApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         // go to the home screen
-        '/Gods': (context) => SmiteAppHomepage(),
+        '/Gods': (context) => GodsPage(),
         '/Categories': (context) => SmiteAppHomepage(),
         '/Items': (context) => SmiteAppHomepage(),
         '/MyBuilds': (context) => SmiteAppHomepage(),
