@@ -20,11 +20,14 @@ Future<Album> fetchAlbum() async {
 }
 
 Future<SessionResponse> fetchSessionResponse(AuthInfo info) async {
+  print("making request");
   final response = await http.get(SessionResponse.buildLink(info));
 
   if (response.statusCode == 200) {
+    print("response");
     return SessionResponse.fromJson(jsonDecode(response.body));
   } else {
+    print("exception");
     throw Exception("could not load the session response");
   }
 }
@@ -33,8 +36,10 @@ Future<GodsResponse> fetchGodsResponse(AuthInfo info) async {
   final response = await http.get(GodsResponse.buildLink(info));
 
   if (response.statusCode == 200) {
+    print("response");
     return GodsResponse.fromJson(jsonDecode(response.body));
   } else {
+    print("exception");
     throw Exception("could not load the session response");
   }
 }

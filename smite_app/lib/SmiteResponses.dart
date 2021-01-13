@@ -38,7 +38,8 @@ class SessionResponse {
   }
 
   static String buildLink(AuthInfo info) {
-    final String base = "http://api.smitegame.com/smiteapi.svc/createsessionjson";
+    print("BUILDING LINK");
+    final String base = "http://api.smitegame.com/smiteapi.svc/createsessionJson";
     final String tmstp = datetimeNow();
     final String signature = generateMd5(info.devID + "createsession" + info.authKey + tmstp);
     return base + '/' + info.devID + '/' + signature + '/' + tmstp;

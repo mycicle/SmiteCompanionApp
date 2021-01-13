@@ -14,7 +14,7 @@ class _GodsPageState extends State<GodsPage> {
   // Future<Album> futureAlbum;
   AuthInfo info = AuthInfo(
     devID: "1234",
-    authKey: "5678",
+    authKey: "1234",
   );
 
   Future<SessionResponse> futureSession;

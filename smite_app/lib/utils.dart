@@ -7,5 +7,5 @@ String generateMd5(String input) {
 }
 
 String datetimeNow() {
-  return DateFormat("yyyyMMddHHmmss").format(DateTime.now());
+  return DateFormat("yyyyMMddHHmmss").format(DateTime.now().toUtc());
 }
