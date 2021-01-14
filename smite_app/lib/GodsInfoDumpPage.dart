@@ -10,21 +10,21 @@ class GodsInfoDumpPage extends StatefulWidget {
 }
 
 class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
-  SessionResponse session;
+  // SessionResponse session;
   final godsList = <God>[];
   final _biggerFont = TextStyle(fontSize: 18.0);
 
-  @override
-  void initState() {
-    super.initState();
-    getSession(global.info).then(
-        (SessionResponse sess) {
-          session = sess;
-          print("Successfully created session");
-          session.cout();
-        }
-    );
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getSession(global.info).then(
+  //       (SessionResponse sess) {
+  //         session = sess;
+  //         print("Successfully created session");
+  //         session.cout();
+  //       }
+  //   );
+  // }
 
   Widget _buildRow(God god, int num) {
     return ListTile(
@@ -35,7 +35,9 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
     );
   }
 
-  Widget godsWidget() {
+  Widget godsWidget(SessionResponse session) {
+    print("GODS WIDGET");
+    print("session: $session");
     return FutureBuilder(
         future: getGods(global.info, session),
         builder: (context, godSnap) {
@@ -56,16 +58,37 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
           }
           return CircularProgressIndicator();
         }
-      );
+    );
+  }
+
+  Widget PageContent() {
+    return FutureBuilder(
+      future: getSession(global.info),
+      builder: (context, sessionSnap) {
+        if (sessionSnap.hasData) {
+          // make the gods request to a future builder
+          return godsWidget(sessionSnap.data);
+        } else if (sessionSnap.hasError) {
+          print("session snap error");
+          return Text("sessionSnap Error: ${sessionSnap.error}");
+        } else if (sessionSnap == null) {
+          print("null");
+          return Text("null");
+        }
+
+        return CircularProgressIndicator();
+      }
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    print("Called Build");
     return Scaffold(
       appBar: AppBar(
         title: Text("Gods Info Dump Page"),
       ),
-      body: godsWidget(),
+      body: PageContent(),
     );
   }
 }
