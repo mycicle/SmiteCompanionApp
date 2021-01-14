@@ -9,15 +9,18 @@ class GodsResponse {
 
   GodsResponse(List<dynamic> inp) {
     this.gods = [];
+    print("GODS RESPONSE CONSTRUCTOR");
     inp.forEach((element) {
-      log('\n\n' + element["Name"] + '\n\n');
+      log('\n\n' + element.toString() + '\n\n');
+      log('\n\n' + element["Ability1"] + '\n\n');
+
       gods.add(God( name: element["Name"].toString(),
                     lore: element["Lore"].toString(),
-                    ab1: Ability(name: element["Ability1"]["Summary"].toString(), attribs: element["Ability1"]["Description"].toString(), desc: element["Ability1"]["Description"]["itemDescription"]["description"].toString()),
-                    ab2: Ability(name: element["Ability2"]["Summary"].toString(), attribs: element["Ability2"]["Description"].toString(), desc: element["Ability2"]["Description"]["itemDescription"]["description"].toString()),
-                    ab3: Ability(name: element["Ability3"]["Summary"].toString(), attribs: element["Ability3"]["Description"].toString(), desc: element["Ability3"]["Description"]["itemDescription"]["description"].toString()),
-                    ab4: Ability(name: element["Ability4"]["Summary"].toString(), attribs: element["Ability4"]["Description"].toString(), desc: element["Ability4"]["Description"]["itemDescription"]["description"].toString()),
-                    ab5: Ability(name: element["Ability5"]["Summary"].toString(), attribs: element["Ability5"]["Description"].toString(), desc: element["Ability5"]["Description"]["itemDescription"]["description"].toString()),
+                    ab1: Ability(name: element["Ability1"].toString(), attribs: element.toString(), desc: element["Ability_1"]["Description"]["itemDescription"]["description"].toString()),
+                    ab2: Ability(name: element["Ability2"].toString(), attribs: element.toString(), desc: element["Ability_2"]["Description"]["itemDescription"]["description"].toString()),
+                    ab3: Ability(name: element["Ability3"].toString(), attribs: element.toString(), desc: element["Ability_3"]["Description"]["itemDescription"]["description"].toString()),
+                    ab4: Ability(name: element["Ability4"].toString(), attribs: element.toString(), desc: element["Ability_4"]["Description"]["itemDescription"]["description"].toString()),
+                    ab5: Ability(name: element["Ability5"].toString(), attribs: element.toString(), desc: element["Ability_5"]["Description"]["itemDescription"]["description"].toString()),
       ));
     });
   }

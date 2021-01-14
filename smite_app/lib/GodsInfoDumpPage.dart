@@ -29,7 +29,7 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
   Widget _buildRow(God god, int num) {
     return ListTile(
       title: Text(
-        "Hello there $num,${god.ab2.name}",
+        god.name,
         style: _biggerFont,
       ),
     );
@@ -41,6 +41,7 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
     return FutureBuilder(
         future: getGods(global.info, session),
         builder: (context, godSnap) {
+          print(godSnap);
           if (godSnap.hasData) {
             return ListView.builder(
               itemCount: godSnap.data.length,
