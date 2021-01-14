@@ -29,7 +29,7 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
   Widget _buildRow(God god, int num) {
     return ListTile(
       title: Text(
-        "Hello there $num, ${god.ab1.name}\n${god.ab2.name}",
+        "Hello there $num,${god.ab2.name}",
         style: _biggerFont,
       ),
     );

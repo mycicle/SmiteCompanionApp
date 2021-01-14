@@ -10,12 +10,15 @@ class GodsResponse {
   GodsResponse(List<dynamic> inp) {
     this.gods = [];
     inp.forEach((element) {
-      log('\n\n' + element.toString() + '\n\n');
-      gods.add(God(ab1: Ability(name: element["Ability1"].toString(), attribs: ["attributes"], desc: "description"),
-                    ab2: Ability(name: element.toString(), attribs: ["attributes"], desc: "description"),
-                    ab3: Ability(name: "name", attribs: ["attributes"], desc: "description"),
-                    ab4: Ability(name: "name", attribs: ["attributes"], desc: "description"),
-                    ab5: Ability(name: "name", attribs: ["attributes"], desc: "description")));
+      log('\n\n' + element["Name"] + '\n\n');
+      gods.add(God( name: element["Name"].toString(),
+                    lore: element["Lore"].toString(),
+                    ab1: Ability(name: element["Ability1"]["Summary"].toString(), attribs: element["Ability1"]["Description"].toString(), desc: element["Ability1"]["Description"]["itemDescription"]["description"].toString()),
+                    ab2: Ability(name: element["Ability2"]["Summary"].toString(), attribs: element["Ability2"]["Description"].toString(), desc: element["Ability2"]["Description"]["itemDescription"]["description"].toString()),
+                    ab3: Ability(name: element["Ability3"]["Summary"].toString(), attribs: element["Ability3"]["Description"].toString(), desc: element["Ability3"]["Description"]["itemDescription"]["description"].toString()),
+                    ab4: Ability(name: element["Ability4"]["Summary"].toString(), attribs: element["Ability4"]["Description"].toString(), desc: element["Ability4"]["Description"]["itemDescription"]["description"].toString()),
+                    ab5: Ability(name: element["Ability5"]["Summary"].toString(), attribs: element["Ability5"]["Description"].toString(), desc: element["Ability5"]["Description"]["itemDescription"]["description"].toString()),
+      ));
     });
   }
 
