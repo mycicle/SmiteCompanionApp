@@ -26,10 +26,10 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
     );
   }
 
-  Widget _buildRow(God god) {
+  Widget _buildRow(God god, int num) {
     return ListTile(
       title: Text(
-        "Hello there",
+        "Hello there $num, ${god.ab1.name}\n${god.ab2.name}",
         style: _biggerFont,
       ),
     );
@@ -45,12 +45,13 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
               itemBuilder: (context, index) {
                 God god = godSnap.data[index];
                 godsList.add(god);
-                return _buildRow(godsList[index]);
+                return _buildRow(godsList[index], index);
               },
             );
           } else if (godSnap.hasError) {
             return Text("godSnap Error: ${godSnap.error}");
           } else if (godSnap == null) {
+            print("null");
             return Text("null");
           }
           return CircularProgressIndicator();

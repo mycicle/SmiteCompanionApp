@@ -8,8 +8,9 @@ class GodsResponse {
   GodsResponse(List<dynamic> inp) {
     this.gods = [];
     inp.forEach((element) {
-      gods.add(God(ab1: Ability(name: "name", attribs: ["attributes"], desc: "description"),
-                    ab2: Ability(name: "name", attribs: ["attributes"], desc: "description"),
+      print('\n\n' + element.toString() + '\n\n');
+      gods.add(God(ab1: Ability(name: element["Ability1"].toString(), attribs: ["attributes"], desc: "description"),
+                    ab2: Ability(name: element.toString(), attribs: ["attributes"], desc: "description"),
                     ab3: Ability(name: "name", attribs: ["attributes"], desc: "description"),
                     ab4: Ability(name: "name", attribs: ["attributes"], desc: "description"),
                     ab5: Ability(name: "name", attribs: ["attributes"], desc: "description")));
