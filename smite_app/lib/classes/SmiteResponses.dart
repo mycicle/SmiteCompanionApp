@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:smite_app/classes/God.dart';
 import 'package:smite_app/classes/AuthInfo.dart';
 import 'package:smite_app/utils/utils.dart';
@@ -8,7 +10,7 @@ class GodsResponse {
   GodsResponse(List<dynamic> inp) {
     this.gods = [];
     inp.forEach((element) {
-      print('\n\n' + element.toString() + '\n\n');
+      log('\n\n' + element.toString() + '\n\n');
       gods.add(God(ab1: Ability(name: element["Ability1"].toString(), attribs: ["attributes"], desc: "description"),
                     ab2: Ability(name: element.toString(), attribs: ["attributes"], desc: "description"),
                     ab3: Ability(name: "name", attribs: ["attributes"], desc: "description"),
