@@ -1,15 +1,25 @@
-import 'package:smite_app/AuthInfo.dart';
-import "package:smite_app/utils.dart";
+import 'package:smite_app/classes/God.dart';
+import 'package:smite_app/classes/AuthInfo.dart';
+import 'package:smite_app/utils/utils.dart';
 
 class GodsResponse {
-  final String body;
+  List<God> gods;
 
-  GodsResponse({this.body});
+  GodsResponse(List<dynamic> inp) {
+    this.gods = [];
+    inp.forEach((element) {
+      gods.add(God(ab1: Ability(name: "name", attribs: ["attributes"], desc: "description"),
+                    ab2: Ability(name: "name", attribs: ["attributes"], desc: "description"),
+                    ab3: Ability(name: "name", attribs: ["attributes"], desc: "description"),
+                    ab4: Ability(name: "name", attribs: ["attributes"], desc: "description"),
+                    ab5: Ability(name: "name", attribs: ["attributes"], desc: "description")));
+    });
+  }
 
   factory GodsResponse.fromJson(List<dynamic> json) {
     print(json);
     return GodsResponse(
-      body: json[0],
+      json
     );
   }
 
@@ -50,7 +60,9 @@ class SessionResponse {
     return base + '/' + info.devID + '/' + signature + '/' + tmstp;
   }
 
-  String getSessionId() {
-    return this.sessionID;
+  void cout() {
+    print("Session ID: $sessionID");
+    print("timestamp: $timestamp");
+    print("ret_msg: $retMsg");
   }
 }

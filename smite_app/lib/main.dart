@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smite_app/GodsPage.dart';
-import 'package:smite_app/SmiteResponses.dart';
-import 'package:smite_app/smiteAPIUtils.dart';
-import 'package:smite_app/AuthInfo.dart';
-import 'package:smite_app/globals.dart' as global;
+import "package:smite_app/GodsInfoDumpPage.dart";
+import "package:smite_app/ItemsInfoDumpPage.dart";
 
 void main() {
   runApp(SmiteApp());
@@ -27,11 +25,8 @@ class SmiteApp extends StatelessWidget {
         '/Items': (context) => SmiteAppHomepage(),
         '/MyBuilds': (context) => SmiteAppHomepage(),
         '/NewBuild': (context) => SmiteAppHomepage(),
-        // '/Gods': (context) => GodsPage(),
-        // '/Categories': (context) => CategoriesPage(),
-        // '/Items': (context) => ItemsPage(),
-        // '/MyBuilds': (context) => MyBuildsPage(),
-        // '/NewBuild': (context) => NewBuildPage(),
+        '/GodsInfoDump': (context) => GodsInfoDumpPage(),
+        '/ItemsInfoDump': (context) => ItemsInfoDumpPage(),
       }
     );
   }
@@ -69,6 +64,8 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
       "Items",
       "MyBuilds",
       "NewBuild",
+      "GodsInfoDump",
+      "ItemsInfoDump",
     };
 
     return ListView.builder(
