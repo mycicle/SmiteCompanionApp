@@ -1,6 +1,6 @@
 # smite_app
 
-An app to help SMITE players with their builds and counterplays
+A new Flutter application.
 
 ## Getting Started
 
