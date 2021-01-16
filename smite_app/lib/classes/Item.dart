@@ -1,7 +1,9 @@
 class Item {
   final String name;
   final String desc;
-  final List<String> attribs;
+  final String price;
+  final String iconLink;
+  final int tier;
 
-  Item({this.name, this.desc, this.attribs});
+  Item({this.name, this.desc, this.price, this.iconLink, this.tier});
 }

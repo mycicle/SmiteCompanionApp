@@ -1,11 +1,6 @@
 import "package:flutter/material.dart";
 import "package:smite_app/classes/God.dart";
 
-
-
-
-
-
 class GodDisplay extends StatefulWidget {
   God god;
 

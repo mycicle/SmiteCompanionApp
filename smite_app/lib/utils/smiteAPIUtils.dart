@@ -31,3 +31,19 @@ Future getGods(AuthInfo info, SessionResponse session) async {
     throw Exception("could not load the gods response \n${response.body}");
   }
 }
+
+Future getItems(AuthInfo info, SessionResponse session) async {
+  print("sent items request");
+  if (session == null) {
+    return null;
+  }
+  final response = await http.get(ItemsResponse.buildLink(info, session.sessionID));
+
+  if (response.statusCode == 200) {
+    print("items response");
+    ItemsResponse res = ItemsResponse.fromJson(jsonDecode(response.body));
+    return res.items;
+  } else {
+    throw Exception("could not load the items response \n${response.body}");
+  }
+}

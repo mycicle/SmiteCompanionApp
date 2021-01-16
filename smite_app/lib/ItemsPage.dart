@@ -1,23 +1,23 @@
 import "package:smite_app/globals.dart" as global;
-import "package:flutter/material.dart";
-import 'package:smite_app/classes/SmiteResponses.dart';
-import 'package:smite_app/classes/God.dart';
-import "package:smite_app/utils/smiteAPIUtils.dart";
-import "package:smite_app/display_widgets/GodDisplay.dart";
 
-class GodsPage extends StatefulWidget {
+import "package:flutter/material.dart";
+import "package:smite_app/classes/SmiteResponses.dart";
+import "package:smite_app/utils/smiteAPIUtils.dart";
+import "package:smite_app/classes/Item.dart";
+import "package:smite_app/display_widgets/ItemDisplay.dart";
+
+class ItemsPage extends StatefulWidget {
   @override
-  _GodsPageState createState() => _GodsPageState();
+  _ItemsPageState createState() => _ItemsPageState();
 }
 
-class _GodsPageState extends State<GodsPage> {
-  // SessionResponse session;
-  final godsList = <God>[];
+class _ItemsPageState extends State<ItemsPage> {
+  final itemsList = <Item>[];
 
-  Widget _buildRow(God god, int num) {
+  Widget _buildRow(Item item, int num) {
     return ListTile(
         title: Text(
-          god.name,
+          item.name,
           style: global.biggerFont,
         ),
         trailing: Icon(Icons.arrow_forward_ios_outlined, color: Colors.black),
@@ -25,32 +25,33 @@ class _GodsPageState extends State<GodsPage> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => GodDisplay(god: god),
+                builder: (context) => ItemDisplay(item: item),
               )
           );
         }
     );
   }
 
-  Widget godsWidget(SessionResponse session) {
-    print("GODS WIDGET");
+  Widget itemsWidget(SessionResponse session) {
+    print("ITEMS WIDGET");
     print("session: $session");
     return FutureBuilder(
-        future: getGods(global.info, session),
-        builder: (context, godSnap) {
-          print(godSnap);
-          if (godSnap.hasData) {
+        future: getItems(global.info, session),
+        builder: (context, itemSnap) {
+          print(itemSnap);
+          if (itemSnap.hasData) {
+            List<Item> items = itemSnap.data.where((item) => item.tier == 3).toList(); // THIS IS WHERE ITEMS ARE FILTERED TO ONLY TIER 3
             return ListView.builder(
-              itemCount: godSnap.data.length,
+              itemCount: items.length,
               itemBuilder: (context, index) {
-                God god = godSnap.data[index];
-                godsList.add(god);
-                return _buildRow(godsList[index], index);
+                Item item = items[index];
+                itemsList.add(item);
+                return _buildRow(itemsList[index], index);
               },
             );
-          } else if (godSnap.hasError) {
-            return Text("godSnap Error: ${godSnap.error}");
-          } else if (godSnap == null) {
+          } else if (itemSnap.hasError) {
+            return Text("itemSnap Error: ${itemSnap.error}");
+          } else if (itemSnap == null) {
             print("null");
             return Text("null");
           }
@@ -64,8 +65,8 @@ class _GodsPageState extends State<GodsPage> {
         future: getSession(global.info),
         builder: (context, sessionSnap) {
           if (sessionSnap.hasData) {
-            // make the gods request to a future builder
-            return godsWidget(sessionSnap.data);
+            // make the items request to a future builder
+            return itemsWidget(sessionSnap.data);
           } else if (sessionSnap.hasError) {
             print("session snap error");
             return Text("sessionSnap Error: ${sessionSnap.error}");
@@ -84,7 +85,7 @@ class _GodsPageState extends State<GodsPage> {
     print("Called Build");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gods Page"),
+        title: Text("Items Page"),
       ),
       body: PageContent(),
     );

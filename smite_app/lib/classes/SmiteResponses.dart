@@ -1,8 +1,47 @@
 import 'dart:developer';
 
+import "package:smite_app/classes/Item.dart";
 import 'package:smite_app/classes/God.dart';
 import 'package:smite_app/classes/AuthInfo.dart';
 import 'package:smite_app/utils/utils.dart';
+
+class ItemsResponse {
+  List<Item> items;
+
+  ItemsResponse(List<dynamic> inp) {
+    this.items = [];
+    print("ITEMS RESPONSE CONSTRUCTOR");
+    inp.forEach((element) {
+      log('\n\n' + element.toString() + '\n\n');
+      items.add(Item(
+          name: element["DeviceName"].toString(),
+          desc: element["ItemDescription"]["Description"].toString(),
+          price: element["Price"].toString(),
+          iconLink: element["itemIcon_URL"].toString(),
+          tier: int.parse(element["ItemTier"].toString()),
+        )
+      );
+    });
+  }
+
+  factory ItemsResponse.fromJson(List<dynamic> json) {
+    print(json);
+    return ItemsResponse(
+      json
+    );
+  }
+
+  static String buildLink(AuthInfo info, String id) {
+    print("BUILDING GODS LINK");
+    final String base = "http://api.smitegame.com/smiteapi.svc/getitemsjson";
+    final String tmstp = datetimeNow();
+    final String signature = generateMd5(info.devID + "getitems" + info.authKey + tmstp);
+    final String languageCode = "1";
+    print(base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode);
+    return base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode;
+  }
+}
+
 
 class GodsResponse {
   List<God> gods;
