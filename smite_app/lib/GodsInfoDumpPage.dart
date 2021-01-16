@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:smite_app/classes/SmiteResponses.dart';
 import 'package:smite_app/classes/God.dart';
 import "package:smite_app/utils/smiteAPIUtils.dart";
+import "package:smite_app/display_widgets/GodDisplay.dart";
 
 class GodsInfoDumpPage extends StatefulWidget {
   @override
@@ -32,6 +33,15 @@ class _GodsInfoDumpPageState extends State<GodsInfoDumpPage> {
         god.name,
         style: _biggerFont,
       ),
+      trailing: Icon(Icons.arrow_forward_ios_outlined, color: Colors.black),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => GodDisplay(god: god),
+          )
+        );
+      }
     );
   }
 
