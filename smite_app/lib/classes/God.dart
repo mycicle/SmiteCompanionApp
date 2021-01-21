@@ -1,3 +1,5 @@
+import "package:smite_app/classes/Build.dart";
+
 class Ability {
   final String name;
   final String desc;
@@ -15,6 +17,7 @@ class God {
   final Ability ab3;
   final Ability ab4;
   final Ability ab5; // passive
+  final List<Build> builds;
 
-  God({this.name, this.lore, this.ab1, this.ab2, this.ab3, this.ab4, this.ab5});
+  God({this.name, this.lore, this.ab1, this.ab2, this.ab3, this.ab4, this.ab5, this.builds});
 }

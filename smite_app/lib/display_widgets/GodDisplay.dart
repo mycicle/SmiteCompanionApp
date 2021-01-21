@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import "package:smite_app/classes/God.dart";
+import "package:smite_app/classes/Build.dart";
+import "package:smite_app/globals.dart" as globals;
 
 class GodDisplay extends StatefulWidget {
   final God god;
@@ -11,20 +13,21 @@ class GodDisplay extends StatefulWidget {
 
 class _GodDisplayState extends State<GodDisplay> {
 
+  Widget BuildListTile(Build build) {
+    return ListTile(
+      title: Text(
+        build.name,
+        style: globals.biggerFont
+      ),
+    );
+  }
+
   Widget GodInformation() {
-      return Text(
-        "LORE: \n" +
-        widget.god.lore + '\n\n' +
-        "ABILITY 1: \n" +
-        widget.god.ab1.name + '\n\n' +
-        "ABILITY 2: \n" +
-        widget.god.ab2.name + '\n\n' +
-        "ABILITY 3: \n" +
-        widget.god.ab3.name + '\n\n' +
-        "ABILITY 4: \n" +
-        widget.god.ab4.name + '\n\n' +
-        "PASSIVE: \n" +
-        widget.god.ab5.name
+      return ListView.builder(
+        itemCount: widget.god.builds.length,
+        itemBuilder: (context, index) {
+          return BuildListTile(widget.god.builds.elementAt(index));
+        }
       );
   }
 
@@ -38,3 +41,18 @@ class _GodDisplayState extends State<GodDisplay> {
     );
   }
 }
+
+// Text(
+//   "LORE: \n" +
+//   widget.god.lore + '\n\n' +
+//   "ABILITY 1: \n" +
+//   widget.god.ab1.name + '\n\n' +
+//   "ABILITY 2: \n" +
+//   widget.god.ab2.name + '\n\n' +
+//   "ABILITY 3: \n" +
+//   widget.god.ab3.name + '\n\n' +
+//   "ABILITY 4: \n" +
+//   widget.god.ab4.name + '\n\n' +
+//   "PASSIVE: \n" +
+//   widget.god.ab5.name
+// )
