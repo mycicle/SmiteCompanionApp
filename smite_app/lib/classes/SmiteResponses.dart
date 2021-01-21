@@ -40,6 +40,16 @@ class ItemsResponse {
     print(base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode);
     return base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode;
   }
+
+  Item get(String name) {
+    return Item(
+      name: "PlaceholderItem",
+      desc: "Placeholder Desc",
+      price: "1000",
+      iconLink: "http://placeholder.com/asset.png",
+      tier: 3,
+    );
+  }
 }
 
 

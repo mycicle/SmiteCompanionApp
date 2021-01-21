@@ -3,6 +3,7 @@ import 'package:smite_app/classes/SmiteResponses.dart';
 import "package:smite_app/globals.dart" as globals;
 import 'package:smite_app/utils/smiteAPIUtils.dart';
 import "package:smite_app/GodsPage.dart";
+import "package:smite_app/utils/utils.dart";
 
 void main() {
   runApp(SmiteApp());
@@ -32,7 +33,9 @@ class SmiteAppHomepage extends StatefulWidget {
 }
 
 class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
-
+  final menuItems = <String>{
+    "Gods",
+  };
 //============================================================
   Widget buildMenuLink(String caption) {
     return ListTile(
@@ -50,33 +53,68 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
     );
   }
 
-  Widget HomepageWithSession(SessionResponse res) {
-    globals.sessionRes = res;
+  Widget HomepageCombineGodsAndBuilds() {
+    return FutureBuilder (
+      future: combineGodsAndBuilds(),
+      builder: (context, combineSnap) {
+        if (combineSnap.hasData) {
+          if (combineSnap.data) {
+            return  ListView.builder(
+              padding: EdgeInsets.all(16.0),
+              itemCount: menuItems.length * 2,
+              itemBuilder: (context, i) {
+                if (i.isOdd) { return Divider(); }
+                return buildMenuLink(menuItems.elementAt(i ~/ 2));
+              },
+            );
+          } else {
+            return Center(child: Text("One of the Gods retrieved by the SMITE API does not have any associated builds. Please await an app update"),);
+          }
+        } else if (combineSnap.hasError) {
+          return Center(child: Text("Combine Snap Error"),);
+        } else if (combineSnap == null) {
+          return Center(child: Text("Combine Snap is Null"),);
+        }
 
-    final menuItems = <String>{
-      "Gods",
-    };
+        return Center(child: CircularProgressIndicator(semanticsLabel: "Getting Gods", valueColor: AlwaysStoppedAnimation<Color>(Colors.amber)));
+      },
+    );
+  }
+
+  Widget HomepageGetItems() {
+    return FutureBuilder(
+        future: getItems(globals.info, globals.sessionRes),
+        builder: (context, itemsSnap) {
+          if (itemsSnap.hasData) {
+            globals.itemsRes = itemsSnap.data;
+            return  HomepageCombineGodsAndBuilds();
+          } else if (itemsSnap.hasError) {
+            return Center(child: Text("Unable to make getitems SMITE API Request"));
+          } else if (itemsSnap == null) {
+            return Center(child: Text("Gods Snap Null"));
+          }
+
+          return Center(child: CircularProgressIndicator(semanticsLabel: "Getting Gods", valueColor: AlwaysStoppedAnimation<Color>(Colors.amber)));
+        }
+    );
+  }
+
+  Widget HomepageGetGods(SessionResponse res) {
+    globals.sessionRes = res;
 
     return FutureBuilder(
       future: getGods(globals.info, globals.sessionRes),
       builder: (context, godsSnap) {
         if (godsSnap.hasData) {
           globals.godsRes = godsSnap.data;
-          return  ListView.builder(
-                    padding: EdgeInsets.all(16.0),
-                    itemCount: menuItems.length * 2,
-                    itemBuilder: (context, i) {
-                      if (i.isOdd) { return Divider(); }
-                      return buildMenuLink(menuItems.elementAt(i ~/ 2));
-                    },
-          );
+          return  HomepageGetItems();
         } else if (godsSnap.hasError) {
           return Center(child: Text("Unable to make getgods SMITE API Request"));
         } else if (godsSnap == null) {
           return Center(child: Text("Gods Snap Null"));
         }
 
-        return Center(child: LinearProgressIndicator(semanticsLabel: "Getting Gods",value: .66,),);
+        return Center(child: CircularProgressIndicator(semanticsLabel: "Getting Gods", valueColor: AlwaysStoppedAnimation<Color>(Colors.amber)));
       }
     );
   }
@@ -93,7 +131,7 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
         future: getSession(globals.info),
         builder: (context, sessionSnap) {
           if (sessionSnap.hasData) {
-            return HomepageWithSession(sessionSnap.data);
+            return HomepageGetGods(sessionSnap.data);
           } else if (sessionSnap.hasError) {
             print("session snap error");
             return Center(child: Text("Unable to create SMITE API session"),);
@@ -102,7 +140,7 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
             return Center(child: Text("Session Snap Null"),);
           }
 
-          return Center(child: LinearProgressIndicator(semanticsLabel: "Getting Session", value: .33,),);
+          return Center(child: CircularProgressIndicator(semanticsLabel: "Getting Gods", valueColor: AlwaysStoppedAnimation<Color>(Colors.amber)));
         }
       )
     );
