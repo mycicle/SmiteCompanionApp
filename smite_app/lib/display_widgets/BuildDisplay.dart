@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:smite_app/classes/Item.dart";
-import "package:smite_app/display_widgets/ItemDisplay.dart";
+// import "package:smite_app/display_widgets/ItemDisplay.dart";
 
 class BuildDisplay extends StatefulWidget {
   Set<Item> items;

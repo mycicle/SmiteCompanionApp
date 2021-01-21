@@ -1,6 +1,7 @@
 import "package:smite_app/globals.dart" as global;
 import "package:flutter/material.dart";
 import 'package:smite_app/classes/SmiteResponses.dart';
+import "package:smite_app/classes/Build.dart";
 import 'package:smite_app/classes/God.dart';
 import "package:smite_app/utils/smiteAPIUtils.dart";
 import "package:smite_app/display_widgets/GodDisplay.dart";
@@ -13,7 +14,7 @@ class GodsPage extends StatefulWidget {
 class _GodsPageState extends State<GodsPage> {
   // SessionResponse session;
   final godsList = <God>[];
-
+  final buildList = <Build>[];
   Widget _buildRow(God god, int num) {
     return ListTile(
         title: Text(
@@ -84,7 +85,7 @@ class _GodsPageState extends State<GodsPage> {
     print("Called Build");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gods Page"),
+        title: Text("Gods Info Dump Page"),
       ),
       body: PageContent(),
     );
