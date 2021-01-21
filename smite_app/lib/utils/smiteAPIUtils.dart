@@ -7,7 +7,7 @@ import 'package:smite_app/classes/AuthInfo.dart';
 Future<SessionResponse> getSession(AuthInfo info) async {
   print("sent request");
   final response = await http.get(SessionResponse.buildLink(info));
-
+  await Future.delayed(const Duration(seconds: 5), (){});
   if (response.statusCode == 200) {
     print("response");
     return SessionResponse.fromJson(jsonDecode(response.body));

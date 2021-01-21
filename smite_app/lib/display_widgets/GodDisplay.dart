@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import "package:smite_app/classes/God.dart";
 
 class GodDisplay extends StatefulWidget {
-  God god;
+  final God god;
 
   GodDisplay({Key key, this.god}) : super(key: key);
   @override
