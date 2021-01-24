@@ -35,7 +35,7 @@ class _GodsPageState extends State<GodsPage> {
     return ListView.builder(
         itemCount: globals.godsRes.length,
         itemBuilder: (context, index) {
-          God god = globals.godsRes.elementAt(index);
+          God god = globals.godsRes[index];
           return buildRow(god);
         },
     );
