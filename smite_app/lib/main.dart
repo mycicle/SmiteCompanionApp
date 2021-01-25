@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:smite_app/classes/SmiteResponses.dart';
+import "package:smite_app/classes/God.dart";
 import "package:smite_app/globals.dart" as globals;
 import 'package:smite_app/utils/smiteAPIUtils.dart';
 import "package:smite_app/GodsPage.dart";
@@ -54,29 +55,14 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
   }
 
   Widget HomepageCombineGodsAndBuilds() {
-    return FutureBuilder (
-      future: combineGodsAndBuilds(),
-      builder: (context, combineSnap) {
-        if (combineSnap.hasData) {
-          if (combineSnap.data) {
-            return  ListView.builder(
-              padding: EdgeInsets.all(16.0),
-              itemCount: menuItems.length * 2,
-              itemBuilder: (context, i) {
-                if (i.isOdd) { return Divider(); }
-                return buildMenuLink(menuItems.elementAt(i ~/ 2));
-              },
-            );
-          } else {
-            return Center(child: Text("One of the Gods retrieved by the SMITE API does not have any associated builds. Please await an app update"),);
-          }
-        } else if (combineSnap.hasError) {
-          return Center(child: Text("Combine Snap Error"),);
-        } else if (combineSnap == null) {
-          return Center(child: Text("Combine Snap is Null"),);
-        }
+    combineGodsAndBuilds();
 
-        return Center(child: CircularProgressIndicator(semanticsLabel: "Getting Gods", valueColor: AlwaysStoppedAnimation<Color>(Colors.amber)));
+    return ListView.builder(
+      padding: EdgeInsets.all(16.0),
+      itemCount: menuItems.length * 2,
+      itemBuilder: (context, i) {
+        if (i.isOdd) { return Divider(); }
+        return buildMenuLink(menuItems.elementAt(i ~/ 2));
       },
     );
   }
@@ -125,7 +111,7 @@ class _SmiteAppHomepageState extends State<SmiteAppHomepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SmiteCompanionApp"),
+        title: Text("Smite Companion App"),
       ),
       body: FutureBuilder(
         future: getSession(globals.info),

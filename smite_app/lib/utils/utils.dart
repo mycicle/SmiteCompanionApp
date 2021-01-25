@@ -8,10 +8,10 @@ String generateMd5(String input) {
 }
 
 String datetimeNow() {
-  return DateFormat("yyyyMMddHHmmss").format(DateTime.now().toUtc());
+  return DateFormat("yyyMMddHHmmss").format(DateTime.now().toUtc());
 }
 
-Future<bool> combineGodsAndBuilds() async {
+void combineGodsAndBuilds() {
   var recommended_builds = builds.RecommendedBuilds;
   recommended_builds.forEach((key, value) {
     globals.godsRes[key].builds = value;

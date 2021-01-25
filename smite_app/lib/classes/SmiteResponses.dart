@@ -9,7 +9,6 @@ class ItemsResponse {
 
   ItemsResponse(List<dynamic> inp) {
     inp.forEach((element) {
-      log('\n\n' + element.toString() + '\n\n');
       items[element["DeviceName"].toString()] = Item(
                                                   name: element["DeviceName"].toString(),
                                                   desc: element["ItemDescription"]["Description"].toString(),
@@ -59,7 +58,6 @@ class GodsResponse {
   }
 
   factory GodsResponse.fromJson(List<dynamic> json) {
-    print(json);
     return GodsResponse(
       json
     );

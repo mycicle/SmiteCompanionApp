@@ -7,7 +7,6 @@ import 'package:smite_app/classes/AuthInfo.dart';
 Future<SessionResponse> getSession(AuthInfo info) async {
   print("sent request");
   final response = await http.get(SessionResponse.buildLink(info));
-  await Future.delayed(const Duration(seconds: 5), (){});
   if (response.statusCode == 200) {
     print("response");
     return SessionResponse.fromJson(jsonDecode(response.body));
@@ -24,7 +23,7 @@ Future getGods(AuthInfo info, SessionResponse session) async {
   final response = await http.get(GodsResponse.buildLink(info, session.sessionID));
 
   if (response.statusCode == 200) {
-    print("gods response");
+    print("received gods response");
     GodsResponse res = GodsResponse.fromJson(jsonDecode(response.body));
     return res.gods;
   } else {
@@ -40,7 +39,7 @@ Future getItems(AuthInfo info, SessionResponse session) async {
   final response = await http.get(ItemsResponse.buildLink(info, session.sessionID));
 
   if (response.statusCode == 200) {
-    print("items response");
+    print("received items response");
     ItemsResponse res = ItemsResponse.fromJson(jsonDecode(response.body));
     return res.items;
   } else {

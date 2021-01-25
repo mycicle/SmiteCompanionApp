@@ -32,11 +32,11 @@ class _GodsPageState extends State<GodsPage> {
   }
 
   Widget GodsList() {
-    final gods
+    final Set<String> godNames = globals.godsRes.keys.toSet();
     return ListView.builder(
         itemCount: globals.godsRes.length,
         itemBuilder: (context, index) {
-          God god = globals.godsRes[index];
+          God god = globals.godsRes[godNames.elementAt(index)];
           return buildRow(god);
         },
     );
