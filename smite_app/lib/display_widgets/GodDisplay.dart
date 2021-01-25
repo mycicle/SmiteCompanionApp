@@ -23,6 +23,13 @@ class _GodDisplayState extends State<GodDisplay> {
   }
 
   Widget GodInformation() {
+    if (widget.god.builds == null) {
+      return Center(
+          child: Text("No Build",
+                      style: globals.biggerFont
+          ),
+      );
+    }
       return ListView.builder(
         itemCount: widget.god.builds.length,
         itemBuilder: (context, index) {
