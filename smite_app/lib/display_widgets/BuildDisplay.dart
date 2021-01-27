@@ -1,22 +1,18 @@
 import "package:flutter/material.dart";
-import "package:smite_app/classes/Item.dart";
-// import "package:smite_app/display_widgets/ItemDisplay.dart";
+import "package:smite_app/classes/Build.dart";
+import "package:smite_app/globals.dart" as globals;
 
 class BuildDisplay extends StatefulWidget {
-  Set<Item> items;
+  final Build build;
 
-  BuildDisplay({Key key, this.items});
+  BuildDisplay({Key key, this.build});
   @override
   _BuildDisplayState createState() => _BuildDisplayState();
 }
 
 class _BuildDisplayState extends State<BuildDisplay> {
 
-  Widget buildWidget() {
-    if (widget.items.length != 7) {
-      return Text("INVALID NUMBER OF ITEMS: EXPECTED 7, GOT ${widget.items.length}");
-    }
-
+  Widget makeBuildGrid() {
     return OrientationBuilder(
         builder: (context, orientation)
         {
@@ -25,9 +21,12 @@ class _BuildDisplayState extends State<BuildDisplay> {
                   crossAxisCount: (orientation == Orientation.portrait)
                       ? 2 : 3
               ),
-              itemCount: widget.items.length,
+              itemCount: widget.build.items.length,
               itemBuilder: (BuildContext context, int index) {
-                return Text("Hello");
+                return Text(
+                    widget.build.items.elementAt(index).name,
+                    style: globals.biggerFont
+                );
               }
           );
         }
@@ -35,6 +34,6 @@ class _BuildDisplayState extends State<BuildDisplay> {
   }
   @override
   Widget build(BuildContext context) {
-    return buildWidget();
+    return makeBuildGrid();
   }
 }

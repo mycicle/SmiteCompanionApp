@@ -26,12 +26,10 @@ class ItemsResponse {
   }
 
   static String buildLink(AuthInfo info, String id) {
-    print("BUILDING GODS LINK");
     final String base = "http://api.smitegame.com/smiteapi.svc/getitemsjson";
     final String tmstp = datetimeNow();
     final String signature = generateMd5(info.devID + "getitems" + info.authKey + tmstp);
     final String languageCode = "1";
-    print(base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode);
     return base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode;
   }
 
@@ -64,12 +62,10 @@ class GodsResponse {
   }
 
   static String buildLink(AuthInfo info, String id) {
-    print("BUILDING GODS LINK");
     final String base = "http://api.smitegame.com/smiteapi.svc/getgodsjson";
     final String tmstp = datetimeNow();
     final String signature = generateMd5(info.devID + "getgods" + info.authKey + tmstp);
     final String languageCode = "1";
-    print(base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode);
     return base + '/' + info.devID + '/' + signature + '/' + id + '/' + tmstp + '/' + languageCode;
   }
 }
@@ -83,7 +79,6 @@ class SessionResponse {
   SessionResponse({this.retMsg, this.sessionID, this.timestamp});
 
   factory SessionResponse.fromJson(Map<String, dynamic> json) {
-    print(json);
     return SessionResponse(
       retMsg: json["ret_msg"],
       sessionID: json["session_id"],
@@ -92,17 +87,19 @@ class SessionResponse {
   }
 
   static String buildLink(AuthInfo info) {
-    print("BUILDING LINK");
     final String base = "http://api.smitegame.com/smiteapi.svc/createsessionJson";
     final String tmstp = datetimeNow();
     final String signature = generateMd5(
-        info.devID + "createsession" + info.authKey + tmstp);
+        info.devID + "createsession" + info.authKey + tmstp
+    );
     return base + '/' + info.devID + '/' + signature + '/' + tmstp;
   }
 
-  void cout() {
-    print("Session ID: $sessionID");
-    print("timestamp: $timestamp");
-    print("ret_msg: $retMsg");
+  Map<String, String> getInformation() {
+    return {
+      "Session ID" : this.sessionID,
+      "timestamp" : this.timestamp,
+      "ret_msg" : this.retMsg,
+    };
   }
 }

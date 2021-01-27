@@ -1,29 +1,35 @@
 import "dart:convert";
+import 'dart:developer';
 import "package:http/http.dart" as http;
 import 'package:smite_app/classes/SmiteResponses.dart';
 import 'package:smite_app/classes/AuthInfo.dart';
 
 
 Future<SessionResponse> getSession(AuthInfo info) async {
-  print("sent request");
-  final response = await http.get(SessionResponse.buildLink(info));
+  final String link = SessionResponse.buildLink(info);
+  log("Sent Session Request to $link");
+  final response = await http.get(link);
   if (response.statusCode == 200) {
-    print("response");
-    return SessionResponse.fromJson(jsonDecode(response.body));
+    log("Successful Session Response");
+    SessionResponse res = SessionResponse.fromJson(jsonDecode(response.body));
+    log("Session Info: ${res.getInformation()}");
+    return res;
   } else {
     throw Exception("could not load the session response \n${response.body}");
   }
 }
 
 Future getGods(AuthInfo info, SessionResponse session) async {
-  print("sent gods request");
   if (session == null) {
     return null;
   }
-  final response = await http.get(GodsResponse.buildLink(info, session.sessionID));
+
+  final String link = GodsResponse.buildLink(info, session.sessionID);
+  log("Sent Gods Request to $link");
+  final response = await http.get(link);
 
   if (response.statusCode == 200) {
-    print("received gods response");
+    log("Successful Gods Response");
     GodsResponse res = GodsResponse.fromJson(jsonDecode(response.body));
     return res.gods;
   } else {
@@ -32,14 +38,16 @@ Future getGods(AuthInfo info, SessionResponse session) async {
 }
 
 Future getItems(AuthInfo info, SessionResponse session) async {
-  print("sent items request");
+
   if (session == null) {
     return null;
   }
-  final response = await http.get(ItemsResponse.buildLink(info, session.sessionID));
+  final String link = ItemsResponse.buildLink(info, session.sessionID);
+  log("Sent Items Request to $link");
+  final response = await http.get(link);
 
   if (response.statusCode == 200) {
-    print("received items response");
+    log("Successful Items Response");
     ItemsResponse res = ItemsResponse.fromJson(jsonDecode(response.body));
     return res.items;
   } else {

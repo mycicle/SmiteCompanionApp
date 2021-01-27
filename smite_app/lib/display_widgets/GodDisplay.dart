@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:smite_app/classes/God.dart";
 import "package:smite_app/classes/Build.dart";
+import "package:smite_app/display_widgets/BuildDisplay.dart";
 import "package:smite_app/globals.dart" as globals;
 
 class GodDisplay extends StatefulWidget {
@@ -19,6 +20,18 @@ class _GodDisplayState extends State<GodDisplay> {
         build.name,
         style: globals.biggerFont
       ),
+      trailing: Icon(
+        Icons.arrow_forward_ios_outlined,
+        color: Colors.grey,
+      ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BuildDisplay(build: build)
+          )
+        );
+      }
     );
   }
 
