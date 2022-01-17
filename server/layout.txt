@@ -1,0 +1,29 @@
+OK so what is the objective
+
+ a middle server to wrap some of the less desirable features of the smite API
+ which means we need to make the smite requests once manually, but the interface does not have to be extensible, efficient, or pretty
+
+def getgods
+
+def createsession
+
+def getitems
+
+those are the three requests we need to make
+
+now the other end of this is the sqlite part, we are using sqlite as a quick and dirty startpoint for all of our needs
+
+def persistgods
+
+def persistitems
+
+for the images we will have to see how they are returned, if they are normal web requests then we can just pass the URLs thorugh
+
+now for the next part we can mimic smite endpoints
+
+/getgods
+def getpersistedgods
+
+/getitems
+def getpersisteditems
+
