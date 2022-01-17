@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		349E284F278FA44F00440FDC /* SmiteCompanionAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E284E278FA44F00440FDC /* SmiteCompanionAppApp.swift */; };
+		349E2851278FA44F00440FDC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E2850278FA44F00440FDC /* ContentView.swift */; };
+		349E2853278FA45000440FDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349E2852278FA45000440FDC /* Assets.xcassets */; };
+		349E2856278FA45000440FDC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 349E2855278FA45000440FDC /* Preview Assets.xcassets */; };
+		349E2858278FA45000440FDC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E2857278FA45000440FDC /* Persistence.swift */; };
+		349E285B278FA45000440FDC /* SmiteCompanionApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 349E2859278FA45000440FDC /* SmiteCompanionApp.xcdatamodeld */; };
+		349E2865278FA45000440FDC /* SmiteCompanionAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E2864278FA45000440FDC /* SmiteCompanionAppTests.swift */; };
+		349E286F278FA45000440FDC /* SmiteCompanionAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E286E278FA45000440FDC /* SmiteCompanionAppUITests.swift */; };
+		349E2871278FA45000440FDC /* SmiteCompanionAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349E2870278FA45000440FDC /* SmiteCompanionAppUITestsLaunchTests.swift */; };
+		34F760232791090700808D52 /* ReferenceCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F760222791090700808D52 /* ReferenceCode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		349E2861278FA45000440FDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 349E2843278FA44F00440FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349E284A278FA44F00440FDC;
+			remoteInfo = SmiteCompanionApp;
+		};
+		349E286B278FA45000440FDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 349E2843278FA44F00440FDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349E284A278FA44F00440FDC;
+			remoteInfo = SmiteCompanionApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		349E284B278FA44F00440FDC /* SmiteCompanionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmiteCompanionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		349E284E278FA44F00440FDC /* SmiteCompanionAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmiteCompanionAppApp.swift; sourceTree = "<group>"; };
+		349E2850278FA44F00440FDC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		349E2852278FA45000440FDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		349E2855278FA45000440FDC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		349E2857278FA45000440FDC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		349E285A278FA45000440FDC /* SmiteCompanionApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmiteCompanionApp.xcdatamodel; sourceTree = "<group>"; };
+		349E2860278FA45000440FDC /* SmiteCompanionAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmiteCompanionAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349E2864278FA45000440FDC /* SmiteCompanionAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmiteCompanionAppTests.swift; sourceTree = "<group>"; };
+		349E286A278FA45000440FDC /* SmiteCompanionAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmiteCompanionAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349E286E278FA45000440FDC /* SmiteCompanionAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmiteCompanionAppUITests.swift; sourceTree = "<group>"; };
+		349E2870278FA45000440FDC /* SmiteCompanionAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmiteCompanionAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		34F760222791090700808D52 /* ReferenceCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceCode.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		349E2848278FA44F00440FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E285D278FA45000440FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E2867278FA45000440FDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		349E2842278FA44F00440FDC = {
+			isa = PBXGroup;
+			children = (
+				349E284D278FA44F00440FDC /* SmiteCompanionApp */,
+				349E2863278FA45000440FDC /* SmiteCompanionAppTests */,
+				349E286D278FA45000440FDC /* SmiteCompanionAppUITests */,
+				349E284C278FA44F00440FDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		349E284C278FA44F00440FDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				349E284B278FA44F00440FDC /* SmiteCompanionApp.app */,
+				349E2860278FA45000440FDC /* SmiteCompanionAppTests.xctest */,
+				349E286A278FA45000440FDC /* SmiteCompanionAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		349E284D278FA44F00440FDC /* SmiteCompanionApp */ = {
+			isa = PBXGroup;
+			children = (
+				349E284E278FA44F00440FDC /* SmiteCompanionAppApp.swift */,
+				349E2850278FA44F00440FDC /* ContentView.swift */,
+				349E2852278FA45000440FDC /* Assets.xcassets */,
+				349E2857278FA45000440FDC /* Persistence.swift */,
+				349E2859278FA45000440FDC /* SmiteCompanionApp.xcdatamodeld */,
+				349E2854278FA45000440FDC /* Preview Content */,
+				34F760222791090700808D52 /* ReferenceCode.swift */,
+			);
+			path = SmiteCompanionApp;
+			sourceTree = "<group>";
+		};
+		349E2854278FA45000440FDC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				349E2855278FA45000440FDC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		349E2863278FA45000440FDC /* SmiteCompanionAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				349E2864278FA45000440FDC /* SmiteCompanionAppTests.swift */,
+			);
+			path = SmiteCompanionAppTests;
+			sourceTree = "<group>";
+		};
+		349E286D278FA45000440FDC /* SmiteCompanionAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				349E286E278FA45000440FDC /* SmiteCompanionAppUITests.swift */,
+				349E2870278FA45000440FDC /* SmiteCompanionAppUITestsLaunchTests.swift */,
+			);
+			path = SmiteCompanionAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		349E284A278FA44F00440FDC /* SmiteCompanionApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349E2874278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionApp" */;
+			buildPhases = (
+				349E2847278FA44F00440FDC /* Sources */,
+				349E2848278FA44F00440FDC /* Frameworks */,
+				349E2849278FA44F00440FDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmiteCompanionApp;
+			productName = SmiteCompanionApp;
+			productReference = 349E284B278FA44F00440FDC /* SmiteCompanionApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		349E285F278FA45000440FDC /* SmiteCompanionAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349E2877278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionAppTests" */;
+			buildPhases = (
+				349E285C278FA45000440FDC /* Sources */,
+				349E285D278FA45000440FDC /* Frameworks */,
+				349E285E278FA45000440FDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349E2862278FA45000440FDC /* PBXTargetDependency */,
+			);
+			name = SmiteCompanionAppTests;
+			productName = SmiteCompanionAppTests;
+			productReference = 349E2860278FA45000440FDC /* SmiteCompanionAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		349E2869278FA45000440FDC /* SmiteCompanionAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349E287A278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionAppUITests" */;
+			buildPhases = (
+				349E2866278FA45000440FDC /* Sources */,
+				349E2867278FA45000440FDC /* Frameworks */,
+				349E2868278FA45000440FDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349E286C278FA45000440FDC /* PBXTargetDependency */,
+			);
+			name = SmiteCompanionAppUITests;
+			productName = SmiteCompanionAppUITests;
+			productReference = 349E286A278FA45000440FDC /* SmiteCompanionAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		349E2843278FA44F00440FDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					349E284A278FA44F00440FDC = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					349E285F278FA45000440FDC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 349E284A278FA44F00440FDC;
+					};
+					349E2869278FA45000440FDC = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 349E284A278FA44F00440FDC;
+					};
+				};
+			};
+			buildConfigurationList = 349E2846278FA44F00440FDC /* Build configuration list for PBXProject "SmiteCompanionApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 349E2842278FA44F00440FDC;
+			productRefGroup = 349E284C278FA44F00440FDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				349E284A278FA44F00440FDC /* SmiteCompanionApp */,
+				349E285F278FA45000440FDC /* SmiteCompanionAppTests */,
+				349E2869278FA45000440FDC /* SmiteCompanionAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		349E2849278FA44F00440FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349E2856278FA45000440FDC /* Preview Assets.xcassets in Resources */,
+				349E2853278FA45000440FDC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E285E278FA45000440FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E2868278FA45000440FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		349E2847278FA44F00440FDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349E2858278FA45000440FDC /* Persistence.swift in Sources */,
+				349E285B278FA45000440FDC /* SmiteCompanionApp.xcdatamodeld in Sources */,
+				349E2851278FA44F00440FDC /* ContentView.swift in Sources */,
+				34F760232791090700808D52 /* ReferenceCode.swift in Sources */,
+				349E284F278FA44F00440FDC /* SmiteCompanionAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E285C278FA45000440FDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349E2865278FA45000440FDC /* SmiteCompanionAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349E2866278FA45000440FDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349E2871278FA45000440FDC /* SmiteCompanionAppUITestsLaunchTests.swift in Sources */,
+				349E286F278FA45000440FDC /* SmiteCompanionAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		349E2862278FA45000440FDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349E284A278FA44F00440FDC /* SmiteCompanionApp */;
+			targetProxy = 349E2861278FA45000440FDC /* PBXContainerItemProxy */;
+		};
+		349E286C278FA45000440FDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349E284A278FA44F00440FDC /* SmiteCompanionApp */;
+			targetProxy = 349E286B278FA45000440FDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		349E2872278FA45000440FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		349E2873278FA45000440FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		349E2875278FA45000440FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SmiteCompanionApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		349E2876278FA45000440FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SmiteCompanionApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		349E2878278FA45000440FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmiteCompanionApp.app/SmiteCompanionApp";
+			};
+			name = Debug;
+		};
+		349E2879278FA45000440FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmiteCompanionApp.app/SmiteCompanionApp";
+			};
+			name = Release;
+		};
+		349E287B278FA45000440FDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmiteCompanionApp;
+			};
+			name = Debug;
+		};
+		349E287C278FA45000440FDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6WD22WV785;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MYCICLE.SmiteCompanionAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmiteCompanionApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		349E2846278FA44F00440FDC /* Build configuration list for PBXProject "SmiteCompanionApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349E2872278FA45000440FDC /* Debug */,
+				349E2873278FA45000440FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349E2874278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349E2875278FA45000440FDC /* Debug */,
+				349E2876278FA45000440FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349E2877278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349E2878278FA45000440FDC /* Debug */,
+				349E2879278FA45000440FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		349E287A278FA45000440FDC /* Build configuration list for PBXNativeTarget "SmiteCompanionAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349E287B278FA45000440FDC /* Debug */,
+				349E287C278FA45000440FDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		349E2859278FA45000440FDC /* SmiteCompanionApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				349E285A278FA45000440FDC /* SmiteCompanionApp.xcdatamodel */,
+			);
+			currentVersion = 349E285A278FA45000440FDC /* SmiteCompanionApp.xcdatamodel */;
+			path = SmiteCompanionApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 349E2843278FA44F00440FDC /* Project object */;
+}
